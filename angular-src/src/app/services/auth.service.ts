@@ -14,7 +14,7 @@ export class AuthService {
    
     let header = new Headers();
     header.append('content-type','application/json');
-    return this.http.post('userRoute/register', user, {headers: header})
+    return this.http.post('http://localhost:3000/userRoute/register', user, {headers: header})
    .map(res=>{
     return res.json();
     })
@@ -22,7 +22,7 @@ export class AuthService {
   authenticateUser(user){
     let header = new Headers();
     header.append('content-type', 'application/json');
-    return this.http.post('userRoute/authenticate', user,{headers: header}).map(response=>{
+    return this.http.post('http://localhost:3000/userRoute/authenticate', user,{headers: header}).map(response=>{
       console.log(response.json());
       return response.json();
       
@@ -55,7 +55,7 @@ export class AuthService {
   registerTeacher(teacher){
     let header = new Headers();
     header.append('content-type','application/json');
-    return this.http.post('teacherRoute/register',teacher,{headers:header}).map(response=>{
+    return this.http.post('http://localhost:3000/teacherRoute/register',teacher,{headers:header}).map(response=>{
       return response.json();
     })
   }
@@ -63,7 +63,7 @@ export class AuthService {
   authenticateTeacher(teacher){
     let header = new Headers();
     header.append('content-type','application/json');
-    return this.http.post('teacherRoute/login', teacher, {headers: header}).map(response=>{
+    return this.http.post('http://localhost:3000/teacherRoute/login', teacher, {headers: header}).map(response=>{
       return response.json();
     })
   }
@@ -71,7 +71,7 @@ export class AuthService {
   addAlgoQuestion(question){
     let header = new Headers();
     header.append('content-type','application/json');
-    return this.http.post('teacherRoute/algoques', question, {headers:header}).map(response=>{
+    return this.http.post('http://localhost:3000/teacherRoute/algoques', question, {headers:header}).map(response=>{
       return response.json();
     })
 
@@ -80,7 +80,7 @@ export class AuthService {
   addSoftwareQuestion(question){
     let header = new Headers();
     header.append('content-type','application/json');
-    return this.http.post('teacherRoute/softwareques',question,{headers:header}).map(response=>{
+    return this.http.post('http://localhost:3000/teacherRoute/softwareques',question,{headers:header}).map(response=>{
       return response.json();
     })
   }
@@ -88,7 +88,7 @@ export class AuthService {
   addJavaQuestion(question){
     let header = new Headers();
     header.append('content-type','application/json');
-    return this.http.post('teacherRoute/javaques',question,{headers:header}).map(response=>{
+    return this.http.post('http://localhost:3000/teacherRoute/javaques',question,{headers:header}).map(response=>{
       return response.json();
     })
   }
@@ -96,7 +96,7 @@ export class AuthService {
   getAlgoQuestion(){
     let header = new Headers();
     header.append('content-type','application/json');
-    return this.http.get('userRoute/algo', {headers:header}).map(response=>{
+    return this.http.get('http://localhost:3000/userRoute/algo', {headers:header}).map(response=>{
       return response.json();
     })
   }
@@ -104,14 +104,14 @@ export class AuthService {
   getJavaQuestion(){
     let header = new Headers();
     header.append('content-type','application/json');
-    return this.http.get('userRoute/java', {headers:header}).map(response=>{
+    return this.http.get('http://localhost:3000/userRoute/java', {headers:header}).map(response=>{
       return response.json();
     })
   }
   getSoftwareQuestion(){
     let header = new Headers();
     header.append('content-type','application/json');
-    return this.http.get('userRoute/software', {headers:header}).map(response=>{
+    return this.http.get('http://localhost:3000/userRoute/software', {headers:header}).map(response=>{
       return response.json();
     })
   }

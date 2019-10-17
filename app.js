@@ -11,7 +11,7 @@ const config = require('./config/db');
 
 mongoose.connect(config.dbPath);
 mongoose.connection.on('connected', ()=>{
-    // console.log("connection created "+config.dbPath);
+    console.log("connection created "+config.dbPath);
 });
 mongoose.connection.on('error', err=>{
     console.log("Error is "+err);
