@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const config = require('../config/db');
-const passwordHash = require('password-hash');
+// const config = require('../config/db');
+// const passwordHash = require('password-hash');
 
 const questions = mongoose.Schema({
    
@@ -19,19 +19,16 @@ const questions = mongoose.Schema({
     option4: {
         type: String
       },
-      option5: {
-        type: String
-      },
     correctAnswer: {
         type: String
       }
      
   });
- 
 
-  const javaQuestion = module.exports = mongoose.model('javaQuestion', questions);
 
-  module.exports.addJavaQuestion = function(javaQuestion,callback){
-  
-    javaQuestion.save(callback);
+  const stressQuestion = module.exports = mongoose.model('stressQuestion', questions);
+
+  module.exports.addStressQuestion = function(stressQuestion,callback){
+
+    stressQuestion.save(callback);
 }

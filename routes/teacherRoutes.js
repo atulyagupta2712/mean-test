@@ -7,7 +7,7 @@ const config = require('../config/db');
 const algo = require('../models/algo');
 const software = require('../models/software');
 const java = require('../models/java');
-
+const stress = require('../models/stress')
 router.post('/register',(request,response,next)=>{
     // console.log('register')
     let newTeacher = new Teacher({
@@ -117,11 +117,34 @@ router.post('/javaques',(request, response,next)=>{
               option2 : request.body.option2,
               option3 : request.body.option3,
               option4 : request.body.option4,
+              option5 : request.body.option5,
               correctAnswer : request.body.correctAnswer
       
  
   })
   java.addJavaQuestion(newQuestion, (error, question)=>{
+      if(error){
+          response.json({success: false, msg: 'Failed to add the question'})
+      }
+      else{
+          response.json({success: true, msg: ''});
+      }
+  })
+} )
+
+router.post('/stressques',(request, response,next)=>{
+    let newQuestion = new stress({
+        questionName : request.body.questionName,
+              option1 : request.body.option1,
+              option2 : request.body.option2,
+              option3 : request.body.option3,
+              option4 : request.body.option4,
+            //   option5 : request.body.option5,
+              correctAnswer : request.body.correctAnswer
+      
+ 
+  })
+  stress.addStressQuestion(newQuestion, (error, question)=>{
       if(error){
           response.json({success: false, msg: 'Failed to add the question'})
       }

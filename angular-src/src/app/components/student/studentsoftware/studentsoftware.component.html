@@ -2,14 +2,15 @@
   <img src="https://p.w3layouts.com/demos_new/template_demo/14-08-2018/edulearn-demo_Free/275217196/web/images/bg5.jpg" alt="" srcset="">
 
   <div class="group">
-      <h2>{{questionObject.questionName}}</h2>
+      <h3>What do you see first?</h3>
+      <img src={{questionObject.questionName}} id= "image"alt="">
       <form  [formGroup]="quesForm" (ngSubmit)="onsoftware()">
           <span><input type="radio" id="o1" formControlName="option"  [value]="questionObject.option1"> {{questionObject.option1}}</span>
-          <span><input type="radio" id="o2" formControlName="option"  [value]="questionObject.option2"> {{questionObject.option2}}</span>
+          <!-- <span><input type="radio" id="o2" formControlName="option"  [value]="questionObject.option2"> {{questionObject.option2}}</span> -->
           <span><input type="radio" id="o3" formControlName="option"  [value]="questionObject.option3"> {{questionObject.option3}}</span>
-          <span><input type="radio" id="o4" formControlName="option"  [value]="questionObject.option4"> {{questionObject.option4}}</span>
+          <!-- <span><input type="radio" id="o4" formControlName="option"  [value]="questionObject.option4"> {{questionObject.option4}}</span> -->
           <button type="submit" value="submit" class="btn btn-primary" >Submit</button>
-          <button class="btn btn-success" (click)="finish()">Finish Quiz</button>
+          <button class="btn btn-success" (click)="again()">Finish Quiz</button>
       </form>
        
   </div>

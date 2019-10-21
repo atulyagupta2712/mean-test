@@ -15,7 +15,8 @@ export class StudentalgoComponent implements OnInit {
   value: any;
   questionIndex: number = 0;
   questionObject:any;
-  score:number=0;
+  score:number=1;
+ scoreArray = [];
   quesForm: FormGroup;
  
   constructor(
@@ -49,14 +50,26 @@ export class StudentalgoComponent implements OnInit {
 
   onalgo(){
      var data = this.quesForm.get('option').value;
- 
-   if(data== this.questions[this.questionIndex].correctAnswer){
-      this.score++;
-
+     
+    if(this.questionIndex < 4){
+      if(data== this.questions[this.questionIndex].option1){
+        console.log(true)
+        this.scoreArray.push(this.questions[this.questionIndex].option2);
+        }
+      
+        if(data == this.questions[this.questionIndex].option3){
+          console.log('hey')
+          this.scoreArray.push(this.questions[this.questionIndex].option4)
+        }
+       
+        console.log(this.scoreArray)
     }
+
     if(this.questionIndex < this.questions.length){
       this.questionIndex++;
-      this.questionObject = this.questions[this.questionIndex]
+      this.questionObject = this.questions[this.questionIndex];
+     
+     
     }
     if(this.questionIndex == this.questions.length){
       this.finish();
@@ -66,8 +79,8 @@ export class StudentalgoComponent implements OnInit {
     })
   }
   finish(){
-    localStorage.setItem('score', JSON.stringify(this.score));
-    localStorage.setItem('length', this.questions.length);
-    this.router.navigate(['result']);
+    localStorage.setItem('score', JSON.stringify(this.scoreArray));
+    // localStorage.setItem('length', this.questions.length);
+    this.router.navigate(['studentsoftware']);
   }
 }

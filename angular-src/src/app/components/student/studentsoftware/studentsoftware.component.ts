@@ -54,8 +54,8 @@ export class StudentsoftwareComponent implements OnInit {
     }
   }
   again(){
-    localStorage.setItem('score', JSON.stringify(this.score));
-    localStorage.setItem('length', this.questions.length);
-    this.router.navigate(['result']);
+    // localStorage.setItem('score', JSON.stringify(this.score));
+    // localStorage.setItem('length', this.questions.length);
+    this.router.navigate(['studentjava']);
   }
 }

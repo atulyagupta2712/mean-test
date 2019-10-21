@@ -39,4 +39,7 @@ export class TdashboardComponent implements OnInit {
   java(){
     this.router.navigate(['java']);
   }
+  stress(){
+    this.router.navigate(['stress'])
+  }
 }

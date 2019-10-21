@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
+import { map } from 'rxjs/operators';
+// import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { tokenNotExpired } from 'angular2-jwt';
 
@@ -23,7 +25,7 @@ export class AuthService {
     let header = new Headers();
     header.append('content-type', 'application/json');
     return this.http.post('http://localhost:3000/userRoute/authenticate', user,{headers: header}).map(response=>{
-      console.log(response.json());
+      // console.log(response.json());
       return response.json();
       
     })
@@ -93,6 +95,20 @@ export class AuthService {
     })
   }
 
+  addStressQuestion(question){
+    let header = new Headers();
+    header.append('content-type','application/json');
+    return this.http.post('http://localhost:3000/teacherRoute/stressques',question,{headers:header}).map(response=>{
+      return response.json();
+    })
+  }
+  getStressQuestion(){
+    let header = new Headers();
+    header.append('content-type','application/json');
+    return this.http.get('http://localhost:3000/userRoute/stress', {headers:header}).map(response=>{
+      return response.json();
+    })
+  }
   getAlgoQuestion(){
     let header = new Headers();
     header.append('content-type','application/json');

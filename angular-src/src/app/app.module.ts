@@ -26,7 +26,10 @@ import { JavaComponent } from './components/teacher/tquiz/java/java.component';
 import { StudentalgoComponent } from './components/student/studentalgo/studentalgo.component';
 import { StudentsoftwareComponent } from './components/student/studentsoftware/studentsoftware.component';
 import { StudentjavaComponent } from './components/student/studentjava/studentjava.component';
-
+import { StudentStressComponent } from './components/student/studentstress/studentstress.component';
+import { StressComponent } from './components/teacher/tquiz/stress/stress.component';
+import { StressResultComponent } from './components/student/stressresult/stressresult.component';
+import { UserAnalysisComponent } from './components/student/useranalysis/useranalysis.component'
 
 
 const appRoutes: Routes = [
@@ -44,7 +47,11 @@ const appRoutes: Routes = [
   {path: "java", component: JavaComponent, canActivate:[AuthGuard2]},
   {path: "studentalgo", component: StudentalgoComponent, canActivate:[AuthGuard]},
   {path: "studentsoftware", component: StudentsoftwareComponent, canActivate:[AuthGuard]},
-  {path: "studentjava", component: StudentjavaComponent, canActivate:[AuthGuard]}
+  {path: "studentjava", component: StudentjavaComponent, canActivate:[AuthGuard]},
+  {path: "userstress", component: StudentStressComponent, canActivate:[AuthGuard]},
+  {path: "stress", component: StressComponent, canActivate: [AuthGuard2]},
+  {path: "stressresult", component: StressResultComponent, canActivate:[AuthGuard]},
+  {path: "useranalysis", component: UserAnalysisComponent, canActivate:[AuthGuard]},
 ]
 
 
@@ -71,7 +78,10 @@ const appRoutes: Routes = [
     StudentalgoComponent,
     StudentsoftwareComponent,
     StudentjavaComponent,
-
+    StudentStressComponent,
+    StressComponent,
+    StressResultComponent,
+    UserAnalysisComponent
     
   ],
   imports: [

@@ -1,22 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../../../../services/auth.service';
 import { Router } from '@angular/router';
 import { ValidateService } from '../../../../services/validate.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
+
 @Component({
-  selector: 'app-java',
-  templateUrl: './java.component.html',
-  styleUrls: ['./java.component.css']
+  selector: 'app-stress',
+  templateUrl: './stress.component.html',
+  styleUrls: ['./stress.component.css']
 })
-export class JavaComponent implements OnInit {
+export class StressComponent implements OnInit {
 
   questionName: String;
   option1: String;
   option2: String;
   option3: String;
   option4: String;
-  option5: String;
   correctAnswer: String;
 
   constructor(
@@ -28,18 +28,24 @@ export class JavaComponent implements OnInit {
 
   ngOnInit() {
   }
-  onjava(){
+  onsoftware(){
     const question = {
     questionName: this.questionName,
     option1: this.option1,
     option2: this.option2,
     option3: this.option3,
     option4: this.option4,
-    option5: this.option5,
     correctAnswer: this.correctAnswer
 
     }
-
+    // console.log( document.querySelectorAll('.hide')[0].innerHTML);
+    // var arr,[] = document.querySelectorAll('.hide');
+    // for( let i =0; i<(document.querySelectorAll('.hide')).length; i++){
+    //   console.log(arr[i]);
+    //   console.log( arr[i].value);
+    //   document.getElementsByClassName('hide')[i].innerHTML = " ";
+    // }
+    
 
     if(!this.validateService.validateQuestion(question)){
       this.flashMessage.show("Please fill in all the fields!", {cssClass: 'alert-danger', timeout: 3000});
@@ -49,16 +55,16 @@ export class JavaComponent implements OnInit {
         this.flashMessage.show("Correct Answer does not match with any of the options!", {cssClass: 'alert-danger', timeout: 3000});
       }
       else{
-        this.authService.addJavaQuestion(question).subscribe(data=>{
+        this.authService.addStressQuestion(question).subscribe(data=>{
           
           if(data.success){
             this.flashMessage.show("Question successfully added!", {cssClass: 'alert-success'});
             this.questionName = " ";
-            // this.option1= " ";
-            // this.option2 = " ";
-            // this.option3= " ";
-            // this.option4= " ";
-            // this.correctAnswer= " ";  
+            this.option1= " ";
+            this.option2 = " ";
+            this.option3= " ";
+            this.option4= " ";
+            this.correctAnswer= " ";  
           
           }
           else{
