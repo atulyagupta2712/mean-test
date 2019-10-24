@@ -1,3 +1,47 @@
-<h1>{{data}}</h1>
-<button (click) = 'onlogout()'>Logout</button>
-<button (click) = 'consult()'>Consult an analyst</button>
+<button (click)="onlogout()">Logout</button>
+<div class="result-cont">
+  <div class="row1">
+    <div class="personality-result">
+      <div class="heading-cont">
+        <h3 class="result-heading">Personality Test Result</h3>
+      </div>
+      <div class="row1">
+        <div class="img-cont">
+          <img
+            src="https://storage.googleapis.com/neris/public/images/types/intp.png"
+            alt=""
+          />
+        </div>
+        <div class="desc-cont">
+          <h3 class="pers-name">The Thinker !!</h3>
+          <p class="pers-desc">
+            An egghead and philosopher, you don't like too much expressiveness.
+            You always seek calm emotions and comfort. You're very careful when
+            making decisions, preferring to analyze and find connections between
+            the past, present and future. You are very sensitive to changes, and
+            you don't handle them easily. You always try to collect all of your
+            facts, thoughts, and ideas, and that's why you are very often tense.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="stress-result">
+      <div class="heading-cont">
+        <h3 class="result-heading">Stress Test Result</h3>
+      </div>
+      <img
+        src="https://demo.w3layouts.com/demos_new/template_demo/19-06-2019/pro_market-demo_Free/1845162954/web/images/s1.png"
+        alt=""
+        class="myImage"
+      />
+      <p class="stress-desc">
+        You are burdened by feelings of hopelessness and helplessness and you
+        are not truly engaged in life. You deserve to be happy, healthy and
+        talking to a doctor may help.
+      </p>
+      <button class="consult-btn" (click)="consult()">
+        Consult A Psychologist
+      </button>
+    </div>
+  </div>
+</div>

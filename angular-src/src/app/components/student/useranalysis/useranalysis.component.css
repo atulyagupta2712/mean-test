@@ -1,3 +1,54 @@
-h2{
-    color: white
+.main-div {
+  background-color: white;
+  padding: 0% !important;
+}
+#head-bg {
+  background-image: url("https://user-images.githubusercontent.com/35227081/67394972-c3dcd180-f5c2-11e9-8689-3cc3dd119ab3.jpg");
+  background-size: cover;
+}
+.heading {
+  padding: 7% 0%;
+  color: white;
+  text-align: center;
+  font-family: "Merriweather", sans-serif;
+}
+.heading h2 {
+  font-weight: 400;
+  font-size: 25px;
+}
+.column {
+  width: 23%;
+  margin: 1%;
+}
+.card-cont {
+  margin: 1% !important;
+  background-color: white;
+}
+.card {
+  margin: 3% 0%;
+}
+.img-cont,
+.desc,
+.contact {
+  text-align: center;
+  padding: 3%;
+  background-color: rgb(255, 201, 23);
+}
+.img-cont img {
+  border-radius: 50%;
+  width: 45%;
+  cursor: pointer;
+}
+.contact {
+  padding: 3%;
+  color: white;
+  background-color: rgb(73, 43, 26);
+}
+.desc {
+  color: rgb(73, 43, 26);
+  font-weight: 400;
+}
+.name-design {
+  color: rgb(73, 43, 26);
+  font-weight: 600;
 }

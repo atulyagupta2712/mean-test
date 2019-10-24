@@ -1,3 +1,96 @@
-h1{
-    color: white;
+.result-cont {
+  height: 250% !important;
+  padding: 8% 0% 8% 0%;
+  background: rgb(174, 174, 174);
+  background: linear-gradient(
+    90deg,
+    rgba(174, 174, 174, 1) 10%,
+    rgba(222, 222, 222, 1) 47%,
+    rgba(174, 174, 174, 1) 93%
+  );
+}
+.main-heading {
+  color: black !important;
+}
+.result-heading {
+  font-family: "Merriweather", serif;
+  color: white;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-top: 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+.row1 {
+  display: flex;
+}
+.stress-result,
+.personality-result {
+  flex: 1;
+  margin: 2%;
+  margin-top: 0;
+  background: rgb(195, 149, 34);
+  background: radial-gradient(
+    circle,
+    rgba(195, 149, 34, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}
+.img-cont img {
+  width: 80%;
+}
+.heading-cont {
+  background-color: rgb(73, 43, 26);
+}
+.result-heading {
+  color: white;
+  padding: 2% 0%;
+}
+.personality-result img {
+  width: 40%;
+}
+.myImage {
+  float: left;
+  margin-top: 2%;
+}
+.img-cont {
+  flex: 1;
+  margin: auto;
+}
+.img-cont img {
+  width: 110%;
+}
+.desc-cont {
+  flex: 2;
+}
+.pers-name {
+  font-size: 27px;
+  margin-bottom: 0;
+  font-weight: 800;
+  margin-top: 4%;
+}
+.pers-desc,
+.stress-desc {
+  color: white;
+  font-size: 18px;
+  padding: 1%;
+  margin-right: 2%;
+  line-height: 25px;
+}
+.stress-result img {
+  width: 38%;
+  margin-left: 2%;
+}
+.stress-desc {
+  margin-left: 43%;
+  margin-top: 4%;
+}
+.consult-btn {
+  background-color: rgb(73, 43, 26);
+  color: white;
+  padding: 3% 5%;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  margin-top: 5%;
 }
