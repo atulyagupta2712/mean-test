@@ -1,63 +1,80 @@
-img{
-    width: 100%;
-    height: 100%;
-    position: relative;
+#img{
+    background: url("https://newevolutiondesigns.com/images/freebies/black-wallpaper-10.jpg") fixed;
+    height: 49vw;
+    padding-top: 8%;
 }
 .group{
-    position: absolute;
-    top: 10%;
-    left: 5%;
     border: 2px solid black;
     width: 80%;
-    background-color: white;
-}
-h1{
-   position: absolute;
-   top: 3%;
-   left: 13%;
-   display: inline-block;
-    
-    font-size: 40px;
-    color: blanchedalmond;
-}
-h4{
-    font-family: 'Acme', sans-serif;
-    font-size: 25px;
-    /* width: 45%; */
+    margin: 0 auto;
+    background:url("https://media.gettyimages.com/videos/symmetric-lines-with-copy-space-loop-video-id1084834232?s=640x640");
+    background-size: cover;
+    height: 28vw;
 }
 button{
-    width: 20%;
+    width: 14%;
     display: inline-block;
     margin: 2%;
-    margin-left: 20%;
-    font-family: 'Chicle', cursive;
-    font-size: 25px;
-    background-color: blanchedalmond;
-    color: black;
+    margin-left: 43%;
+    margin-top: 0%;
+    border: 1px solid;
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: palegoldenrod;
+    color: firebrick;
+}
+button:hover{
+    background-color: firebrick;
+    color: palegoldenrod;
+    border: 1px solid bisque;
+}
+.btn-primary:focus {
+    box-shadow: none;
+}
+.btn-primary:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background-color: firebrick;
+    border-color: palegoldenrod;
+}
+hr{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+h3{
+    display: inline;
+    background-color: firebrick;
+    padding: 0% 2%;
+    color: palegoldenrod;
+    font-family: 'Merriweather', serif;
 }
 h2{
-    /* position: absolute; */
-    /* top: 15%;
-    left: 37%; */
     font-family: 'Chicle', cursive;
-    font-size: 40px;
+    font-size: 1.6rem;
     color: black;
-    text-align: center
-
+    text-align: center;
+    padding: 0% 1%;
 }
-
-
-
-
+form {
+    width: 100%;
+    padding: 1% 2%;
+}
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    width: 100%;
+    font-family: 'Dosis', sans-serif;
+}
 input{
-
-    margin: 2% 5%;
+    margin: 0% 0%;
 }
 span{
     color: black;
     font-size: 30px;
     font-family: 'Satisfy', sans-serif;
     display: block;
+    padding-left: 3%;
 }
 
 @media(max-width: 1350px){
