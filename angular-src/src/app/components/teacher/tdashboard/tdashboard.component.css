@@ -4,10 +4,12 @@
   top: 6%;
   width: 12%;
 }
+
 .tdash-form-cont {
   background-image: url("https://demo.w3layouts.com/demos_new/template_demo/07-02-2018/referral_program_form-demo_Free/1812534694/web/images/banner.jpg");
   background-size: cover;
   margin: 0;
+  position:relative;
   padding: 0;
   padding: 2% 0%;
 }
@@ -20,9 +22,10 @@
   letter-spacing: 3px;
   margin: 0 0 35px 0;
   padding: 0;
-  color: rgb(195, 149, 34);
+  color: rgba(255, 203, 61);
   font-family: "Merriweather", serif;
 }
+
 .form-div {
   width: 640px;
   margin: 0 auto;
@@ -30,8 +33,9 @@
   min-height: 500px;
   background: rgba(0, 0, 0, 0.45);
   margin-bottom: 1%;
-  border: 2px solid rgb(195, 149, 34);
+  border: 1px solid rgba(255, 203, 61);;
 }
+
 .form-div h2 {
   font-size: 30px;
   text-align: center;
@@ -43,6 +47,7 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
+
 .form-div p {
   color: #fff;
   font-size: 17px;
@@ -50,13 +55,16 @@
   margin-top: 15px;
   letter-spacing: 2px;
 }
+
 .form-section {
   margin-top: 36px;
 }
+
 .form-cont ul {
   margin: 0;
   padding: 0;
 }
+
 .form-section h3 {
   font-size: 24px;
   text-align: left;
@@ -69,12 +77,14 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
+
 li {
   list-style-type: none;
 }
+
 .option-name {
   width: 30%;
-  display: inline-block;
+  /* display: inline-block; */
   float: left;
   font-size: 15px;
   font-weight: 500;
@@ -86,15 +96,18 @@ li {
   font-family: "Lato", sans-serif;
   margin: 0;
 }
+
 label .required-star {
   font-size: 28px;
   vertical-align: -5px;
   color: #e91e1e;
 }
+
 .option-val {
   display: inline-block;
   width: 70%;
 }
+
 .form-section input[type="text"],
 .form-section input[type="email"],
 .form-section input[type="tel"],
@@ -106,29 +119,32 @@ textarea {
   margin: 10px 0;
   width: 100%;
   outline: none;
-  border: 1px solid rgb(195, 149, 34);
+  border: 1px solid rgba(255, 203, 61);;
   background: transparent;
   color: #fff !important;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
+
 .submit-cont input[type="submit"] {
   font-size: 15px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
   display: block;
-  padding: 10px;
+  padding: 10px 25px;
+  font-weight: 700;
   width: 30%;
   margin: 10px auto 0;
   box-sizing: border-box;
-  border: 1px solid rgb(73, 43, 26);
+  border: 1px solid black;
   outline: none;
-  background: rgb(195, 149, 34);
-  color: rgb(73, 43, 26);
+  background:  rgba(255, 203, 61);
+  color: black;
   cursor: pointer;
   font-family: "Lato", sans-serif;
 }
+
 ::placeholder {
   color: white;
   opacity: 1;
@@ -140,4 +156,24 @@ textarea {
 
 ::-ms-input-placeholder {
   color: white;
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 203, 61);
+}
+
+.footer-1 {
+  margin: 0 10vw;
+  padding: 5px 0;
+}
+
+.footer-1 p {
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  color: black;
+  font-size: 15px;
 }

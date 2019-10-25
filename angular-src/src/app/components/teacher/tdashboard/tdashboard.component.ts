@@ -42,4 +42,7 @@ export class TdashboardComponent implements OnInit {
   stress(){
     this.router.navigate(['stress'])
   }
+  onSubmit(){
+    this.router.navigate(['./useranalysis']);
+  }
 }

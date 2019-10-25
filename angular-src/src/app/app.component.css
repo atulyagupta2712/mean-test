@@ -8,4 +8,12 @@
 #container{
     margin:0;
     padding:0;
+    position: relative;
+}
+
+flash-messages{
+    position: absolute;
+    width:100%;
+    top:0;
+    z-index:2;
 }
