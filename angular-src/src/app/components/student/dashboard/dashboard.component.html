@@ -1,5 +1,19 @@
 <div id="dashboard">
-  <button id="logout" (click)="onLogoutClick()">Logout</button>
+    <header>
+        <div class="header-1">
+          <a href="#">
+            <img src="https://neuroethicscanada.files.wordpress.com/2014/03/logo2-no-bg.png?w=300" alt="">
+            <span class="header-a">Personalysis</span>
+          </a>
+        </div>
+        <div class="header-2">
+          <button (click)="onLogoutClick()" class="head-btn">Logout
+          </button>
+          <!-- <button class="head-btn">Register
+          </button> -->
+        </div>
+      </header>
+  <!-- <button id="logout" (click)="onLogoutClick()">Logout</button> -->
   <h2>Hi <span id="name"></span> !</h2>
   <div class="group">
      <h1 class="text-center">Instructions</h1>
@@ -15,4 +29,9 @@
     </ul>
      <button (click)="algo()">Take Test</button>
  </div>
+ <footer>
+  <div class="footer-1">
+    <p>Copyright © 2019 MAAD. All Rights Reserved.</p>
+  </div>
+</footer>
 </div>
