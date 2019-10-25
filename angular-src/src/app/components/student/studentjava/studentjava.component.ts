@@ -29,6 +29,13 @@ export class StudentjavaComponent implements OnInit {
    });
   
   }
+  
+  onLogoutClick(){
+    this.authService.onLogout();
+    alert('You are logged out');
+    this.router.navigate(['/']);
+    return false;
+  }
 
   ngOnInit() {
     this.authService.getJavaQuestion().subscribe(data=>{

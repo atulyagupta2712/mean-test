@@ -36,6 +36,12 @@ export class StressResultComponent implements OnInit {
     this.router.navigate(['/']);
     return false;
     }
+    onLogoutClick(){
+      this.authService.onLogout();
+      alert('You are logged out');
+      this.router.navigate(['/']);
+      return false;
+    }
     consult(){
       this.router.navigate(['useranalysis'])
     }

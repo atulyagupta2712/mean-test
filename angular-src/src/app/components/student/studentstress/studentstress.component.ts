@@ -73,5 +73,12 @@ export class StudentStressComponent implements OnInit {
      
       this.router.navigate(['stressresult']);
     }
+    
+  onLogoutClick(){
+    this.authService.onLogout();
+    alert('You are logged out');
+    this.router.navigate(['/']);
+    return false;
+  }
   }
   

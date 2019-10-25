@@ -39,6 +39,12 @@ export class StudentsoftwareComponent implements OnInit {
     console.log(error);
   })
   }
+   onLogoutClick(){
+    this.authService.onLogout();
+    alert('You are logged out');
+    this.router.navigate(['/']);
+    return false;
+  }
   onsoftware(){
     var data = this.quesForm.get('option').value;
     if(data == this.questionObject.correctAnswer){

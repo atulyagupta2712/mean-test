@@ -10,5 +10,18 @@ import { FormControl, FormGroup} from '@angular/forms'
   styleUrls: ['./useranalysis.component.css']
 })
 export class UserAnalysisComponent implements OnInit {
-    ngOnInit(){}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ){ 
+  }
+    ngOnInit(){
+
+    }
+    onLogoutClick(){
+      this.authService.onLogout();
+      alert('You are logged out');
+      this.router.navigate(['/']);
+      return false;
+    }
 }

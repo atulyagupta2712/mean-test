@@ -9,7 +9,9 @@ header {
   display: flex;
   /* border-top: 10px solid rgb(255, 201, 23);*/
   padding-bottom: 10px;
-  background: rgba(248, 216, 74)
+  /* background: rgba(248, 216, 74); */
+  background: wheat;
+  border-bottom: 3px solid firebrick;
 }
 
 .header-1 {
@@ -87,6 +89,7 @@ header {
 
 .card-cont {
   padding: 1% !important;
+  padding-bottom: 3% !important;
   margin:0;
   background-color: white;
 }
@@ -130,7 +133,9 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(255, 203, 61);
+  /* background: rgba(255, 203, 61); */
+  background: wheat;
+  border-top: 2px solid firebrick;
 }
 
 .footer-1 {

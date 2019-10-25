@@ -83,4 +83,10 @@ export class StudentalgoComponent implements OnInit {
     // localStorage.setItem('length', this.questions.length);
     this.router.navigate(['studentsoftware']);
   }
+  onLogoutClick(){
+    this.authService.onLogout();
+    alert('You are logged out');
+    this.router.navigate(['/']);
+    return false;
+  }
 }
