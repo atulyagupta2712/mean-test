@@ -10,7 +10,12 @@ import { ValidateService } from '../../../services/validate.service';
   styleUrls: ['./tdashboard.component.css']
 })
 export class TdashboardComponent implements OnInit {
-
+  name: String;
+  email: String;
+  number: Number;
+  experience: String;
+  expertise: String;
+  address: String;
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -30,16 +35,40 @@ export class TdashboardComponent implements OnInit {
     this.router.navigate(['/']);
     return false;
   }
-  algo(){
-    this.router.navigate(['algo']);
-  }
-  software(){
-    this.router.navigate(['software']);
-  }
-  java(){
-    this.router.navigate(['java']);
-  }
-  stress(){
-    this.router.navigate(['stress'])
+ 
+  onSubmit(){
+    const psychologist = {
+      name: this.name,
+      email: this.email,
+      number: this.number,
+      expertise: this.expertise,
+      experience: this.experience,
+      address: this.address
+  
+      }
+   
+     
+          this.authService.addpsychologist(psychologist).subscribe(data=>{
+            console.log(data);
+            if(data.success){
+              
+              this.flashMessage.show("Psychologist successfully added!", {cssClass: 'alert-success',timeout: 3000});
+              console.log('hey');
+              alert('Psychologist added!')
+              this.name = "";
+              this.email= "";
+              // this.number = ;
+              this.experience= "";
+              this.expertise= "";
+              this.address= "";  
+            }
+            else{
+              this.flashMessage.show(data.msg, {cssClass: 'alert-danger'});
+            }
+            
+          })
+        
+      
+    this.router.navigate(['./useranalysis']);
   }
 }

@@ -3,6 +3,7 @@ import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { FormControl, FormGroup} from '@angular/forms'
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-studentsoftware',
@@ -19,7 +20,8 @@ export class StudentsoftwareComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private flashMessage: FlashMessagesService,
   ) { 
     this.questionObject={};
     this.quesForm = new FormGroup({
@@ -39,19 +41,34 @@ export class StudentsoftwareComponent implements OnInit {
     console.log(error);
   })
   }
+   onLogoutClick(){
+    this.authService.onLogout();
+    alert('You are logged out');
+    this.router.navigate(['/']);
+    return false;
+  }
   onsoftware(){
     var data = this.quesForm.get('option').value;
-    if(data == this.questionObject.correctAnswer){
-      this.score++;
-    }
-    // console.log(this.questionIndex);
-    if(this.questionIndex < this.questions.length){
-      this.questionIndex++;
-      this.questionObject = this.questions[this.questionIndex];
-    }
-    if(this.questionIndex == this.questions.length){
-      this.again();
-    }
+    if(!data){
+      this.flashMessage.show("Please choose 1 option!", {cssClass: 'alert-danger',  timeout: 4000});
+     }
+     else{
+      if(data == this.questionObject.correctAnswer){
+        this.score++;
+      }
+      // console.log(this.questionIndex);
+      if(this.questionIndex < this.questions.length){
+        this.questionIndex++;
+        this.questionObject = this.questions[this.questionIndex];
+      }
+      if(this.questionIndex == this.questions.length){
+        this.again();
+      }
+      this.quesForm = new FormGroup({
+        option: new FormControl()
+      })
+     }
+    
   }
   again(){
     // localStorage.setItem('score', JSON.stringify(this.score));

@@ -79,6 +79,15 @@ export class AuthService {
 
   }
 
+  addpsychologist(question){
+    let header = new Headers();
+    header.append('content-type','application/json');
+    return this.http.post('http://localhost:3000/teacherRoute/psychologist', question, {headers:header}).map(response=>{
+      return response.json();
+    })
+
+  }
+
   addSoftwareQuestion(question){
     let header = new Headers();
     header.append('content-type','application/json');
@@ -128,6 +137,13 @@ export class AuthService {
     let header = new Headers();
     header.append('content-type','application/json');
     return this.http.get('http://localhost:3000/userRoute/software', {headers:header}).map(response=>{
+      return response.json();
+    })
+  }
+  getpsychologist(){
+    let header = new Headers();
+    header.append('content-type','application/json');
+    return this.http.get('http://localhost:3000/userRoute/psychologist', {headers:header}).map(response=>{
       return response.json();
     })
   }

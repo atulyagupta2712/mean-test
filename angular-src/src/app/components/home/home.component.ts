@@ -23,13 +23,20 @@ export class HomeComponent implements OnInit {
      this.teacher= false;
    }
   }
+  
   onTeacher(){
     this.router.navigate(['/tlogin']);
   }
   onStudent(){
     this.router.navigate(['/login']);
-   
   }
+  onTeacherReg(){
+    this.router.navigate(['/tregister']);
+  }
+  onStudentReg(){
+    this.router.navigate(['/register']);
+  }
+
   studentd(){
     this.router.navigate(['dashboard']);
   }
