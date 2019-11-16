@@ -7,7 +7,8 @@ const config = require('../config/db');
 const algo = require('../models/algo');
 const software = require('../models/software');
 const java = require('../models/java');
-const stress = require('../models/stress')
+const stress = require('../models/stress');
+const psychologist = require('../models/psychologist')
 
 router.post('/register', (request, response, next)=>{
     
@@ -120,6 +121,17 @@ router.get('/java', (request,response,next)=>{
 
 router.get('/stress', (request,response,next)=>{
     stress.find({}, (error,questions)=>{
+        if(error){
+            response.json({'success': false, 'msg': 'Failed to get the questions'});
+        }
+        else{
+            response.json({'success': true, 'msg': questions});
+        }
+    })
+})
+
+router.get('/psychologist', (request,response,next)=>{
+    psychologist.find({}, (error,questions)=>{
         if(error){
             response.json({'success': false, 'msg': 'Failed to get the questions'});
         }

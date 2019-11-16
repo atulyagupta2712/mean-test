@@ -20,19 +20,14 @@
       <div class="row1">
         <div class="img-cont">
           <img
-            src="https://storage.googleapis.com/neris/public/images/types/intp.png"
+            src={{image}}
             alt=""
           />
         </div>
         <div class="desc-cont">
-          <h3 class="pers-name">The Thinker !!</h3>
+          <h3 class="pers-name">{{heading}}</h3>
           <p class="pers-desc">
-            An egghead and philosopher, you don't like too much expressiveness.
-            You always seek calm emotions and comfort. You're very careful when
-            making decisions, preferring to analyze and find connections between
-            the past, present and future. You are very sensitive to changes, and
-            you don't handle them easily. You always try to collect all of your
-            facts, thoughts, and ideas, and that's why you are very often tense.
+           {{data}}
           </p>
         </div>
       </div>
@@ -47,9 +42,11 @@
         class="myImage"
       />
       <p class="stress-desc">
-        You are burdened by feelings of hopelessness and helplessness and you
+        <!-- You are burdened by feelings of hopelessness and helplessness and you
         are not truly engaged in life. You deserve to be happy, healthy and
-        talking to a doctor may help.
+        talking to a doctor may help. -->
+
+        {{data2}}
       </p>
       <button class="consult-btn" (click)="consult()">
         Consult A Psychologist

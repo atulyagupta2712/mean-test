@@ -156,7 +156,10 @@ span{
     font-family: 'Satisfy', sans-serif;
     display: inline-block;
 }
-
+/*  */
+.span{
+    display: block;
+}
 @media(max-width: 1350px){
     img{
         height: 600px;

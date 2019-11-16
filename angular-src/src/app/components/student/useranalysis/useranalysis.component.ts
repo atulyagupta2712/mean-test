@@ -10,6 +10,7 @@ import { FormControl, FormGroup} from '@angular/forms'
   styleUrls: ['./useranalysis.component.css']
 })
 export class UserAnalysisComponent implements OnInit {
+  psycho:any;
   constructor(
     private authService: AuthService,
     private router: Router
@@ -17,6 +18,14 @@ export class UserAnalysisComponent implements OnInit {
   }
     ngOnInit(){
 
+      this.authService.getpsychologist().subscribe(data=>{
+        // console.log(data)
+        this.psycho = data.msg;
+        // for(let i =0; i<data.msg.length; i++){
+        
+        // }
+        // console.log(this.psycho)
+      })
     }
     onLogoutClick(){
       this.authService.onLogout();

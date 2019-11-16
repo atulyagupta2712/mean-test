@@ -3,6 +3,7 @@ import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { FormControl, FormGroup} from '@angular/forms'
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-studentjava',
@@ -20,7 +21,8 @@ export class StudentjavaComponent implements OnInit {
  
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private flashMessage: FlashMessagesService,
   ) { 
     this.questionObject={};
     this.quesForm = new FormGroup({
@@ -56,6 +58,10 @@ export class StudentjavaComponent implements OnInit {
 
   onjava(){
     var data = this.quesForm.get('option').value;
+    if(!data){
+      this.flashMessage.show("Please choose 1 option!", {cssClass: 'alert-danger',  timeout: 4000});
+     }
+     else{
     
    if(data== this.questions[this.questionIndex].correctAnswer){
       this.score++;
@@ -71,9 +77,10 @@ export class StudentjavaComponent implements OnInit {
       option: new FormControl()
     })
   }
+  }
   finish(){
     // localStorage.setItem('score', JSON.stringify(this.score));
     // localStorage.setItem('length', this.questions.length);
-    this.router.navigate(['result']);
+    this.router.navigate(['userstress']);
   }
 }

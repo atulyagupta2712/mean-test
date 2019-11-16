@@ -3,6 +3,7 @@ import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { FormControl, FormGroup} from '@angular/forms'
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-studentstress',
@@ -19,7 +20,8 @@ export class StudentStressComponent implements OnInit {
   
     constructor(
       private authService: AuthService,
-      private router: Router
+      private router: Router,
+      private flashMessage: FlashMessagesService
     ) { 
       this.questionObject={};
       this.quesForm = new FormGroup({
@@ -41,8 +43,12 @@ export class StudentStressComponent implements OnInit {
     })
     }
     onsoftware(){
-      console.log(this.score)
+     
       var data = this.quesForm.get('option').value;
+      if(!data){
+        this.flashMessage.show("Please choose 1 option!", {cssClass: 'alert-danger',  timeout: 4000});
+      }
+      else{
       if(data == this.questions[this.questionIndex].option1 || data == ' '+this.questions[this.questionIndex].option1){
         this.score= this.score + 4;
       }
@@ -67,6 +73,7 @@ export class StudentStressComponent implements OnInit {
       this.quesForm = new FormGroup({
         option: new FormControl()
       })
+    }
     }
     again(){
       localStorage.setItem('stressscore', JSON.stringify(this.score));

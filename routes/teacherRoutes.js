@@ -7,7 +7,8 @@ const config = require('../config/db');
 const algo = require('../models/algo');
 const software = require('../models/software');
 const java = require('../models/java');
-const stress = require('../models/stress')
+const stress = require('../models/stress');
+const psychologist = require('../models/psychologist')
 router.post('/register',(request,response,next)=>{
     // console.log('register')
     let newTeacher = new Teacher({
@@ -145,6 +146,28 @@ router.post('/stressques',(request, response,next)=>{
  
   })
   stress.addStressQuestion(newQuestion, (error, question)=>{
+      if(error){
+          response.json({success: false, msg: 'Failed to add the question'})
+      }
+      else{
+          response.json({success: true, msg: ''});
+      }
+  })
+} )
+
+router.post('/psychologist',(request, response,next)=>{
+    let newQuestion = new psychologist({
+                name : request.body.name,
+              email : request.body.email,
+              number : request.body.number,
+              expertise : request.body.expertise,
+              experience : request.body.experience,
+            //   option5 : request.body.option5,
+              address : request.body.address
+      
+ 
+  })
+  psychologist.addQuestion(newQuestion, (error, question)=>{
       if(error){
           response.json({success: false, msg: 'Failed to add the question'})
       }
