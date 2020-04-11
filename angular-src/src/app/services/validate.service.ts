@@ -14,6 +14,15 @@ export class ValidateService {
       return true;
     }
   }
+  validatePay(user){
+    if(user.name == undefined || user.email == undefined || user.phone == undefined){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
   validateLogin(user){
     // console.log("validateRegister(user)");
     if( user.username == undefined ||user.password == undefined){

@@ -24,22 +24,46 @@
   </div>
   <!-- {{psycho}} -->
   <div class="row card-cont">
-    <div class="column" *ngFor= "let p of psycho">
+    <div class="column" *ngFor="let p of psycho">
       <div class="card">
         <div class="img-cont">
-          <img src="https://icon-library.net/images/psychology-icon/psychology-icon-1.jpg" alt="" />
-        </div>
-        <div class="desc" >
-          <!-- {{psycho}} -->
           <h5 class="name-design">{{p.name}}</h5>
-          <h6>Experience : {{p.experience}}</h6>
-          <h6>Expertise in: <span>{{p.expertise}}</span></h6>
+        </div>
+        <div class="desc">
+          <!-- {{psycho}} -->
+          <div class="content1">
+            <img src="https://icon-library.net/images/psychology-icon/psychology-icon-1.jpg" alt="" />
+          </div>
+          <div class="content2">
+            <h6>Experience : <span class="head">{{p.experience}} </span></h6>
+            <h6>Expertise : <span class="head">{{p.expertise}}</span></h6>
+            <h6>Rating : <i class="head fas fa-star"></i><i class="head far fa-star"></i>
+              <span *ngIf="p.rating">
+                <!-- 1 star  -->
+                <i
+                  [class]="(p.rating == 0) ? 'far fa-star' : (p.rating > 0 && p.rating < 1) ? 'fas fa-star-half-alt' : 'fas fa-star'"></i>
+                <!-- 2 star  -->
+                <i
+                  [class]="(p.rating > 1 && p.rating < 2) ? 'fas fa-star-half-alt' : (p.rating >= 2) ? 'fas fa-star' : 'far fa-star'"></i>
+                <!-- 3 star  -->
+                <i
+                  [class]="(p.rating > 2 && p.rating < 3) ? 'fas fa-star-half-alt' : (p.rating >= 3) ? 'fas fa-star' : 'far fa-star'"></i>
+                <!-- 4 star  -->
+                <i
+                  [class]="(p.rating > 3 && p.rating < 4) ? 'fas fa-star-half-alt' : (p.rating >= 4) ? 'fas fa-star' : 'far fa-star'"></i>
+                <!-- 5 star  -->
+                <i
+                  [class]="(p.rating > 4 && p.rating < 5) ? 'fas fa-star-half-alt' : (p.rating >= 5) ? 'fas fa-star' : 'far fa-star'"></i>
+              </span>
+            </h6>
+            <button (click)="onChat()" >Proceed to Chat</button>
+          </div>
           <!-- <h6>Address : {{p.address}}</h6> -->
         </div>
-        <div class="contact">
+        <!-- <div class="contact">
           <div><i class="fa fa-phone"></i> &nbsp;{{p.number}}</div>
-          <div><i class="fa fa-envelope"></i> &nbsp;{{p.email}}</div>
-        </div>
+          <div><i class="fa fa-envelope"></i> &nbsp;{{p.email}}</div> 
+        </div> -->
       </div>
     </div>
     <!-- <div class="column">
@@ -111,9 +135,9 @@
       </div>
     </div>
   </div> -->
-  <footer>
-    <div class="footer-1">
-      <p>Copyright © 2019 MAAD. All Rights Reserved.</p>
-    </div>
-  </footer>
-</div>
+    <footer>
+      <div class="footer-1">
+        <p>Copyright © 2019 MAAD. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>

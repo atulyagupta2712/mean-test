@@ -19,7 +19,7 @@ export class UserAnalysisComponent implements OnInit {
     ngOnInit(){
 
       this.authService.getpsychologist().subscribe(data=>{
-        // console.log(data)
+        console.log("data", this);
         this.psycho = data.msg;
         // for(let i =0; i<data.msg.length; i++){
         
@@ -27,6 +27,11 @@ export class UserAnalysisComponent implements OnInit {
         // console.log(this.psycho)
       })
     }
+
+    onChat(){
+      this.router.navigate(['payment']);
+    }
+
     onLogoutClick(){
       this.authService.onLogout();
       alert('You are logged out');
