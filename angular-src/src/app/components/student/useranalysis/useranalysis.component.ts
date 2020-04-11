@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 import { NgForm } from '@angular/forms';
 import { FormControl, FormGroup} from '@angular/forms'
 
@@ -13,7 +14,8 @@ export class UserAnalysisComponent implements OnInit {
   psycho:any;
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private flashMessage: FlashMessagesService
   ){ 
   }
     ngOnInit(){
@@ -34,7 +36,7 @@ export class UserAnalysisComponent implements OnInit {
 
     onLogoutClick(){
       this.authService.onLogout();
-      alert('You are logged out');
+      this.flashMessage.show('You have logged out successfully', {cssClass: 'alert-success', timeout: 4000});
       this.router.navigate(['/']);
       return false;
     }

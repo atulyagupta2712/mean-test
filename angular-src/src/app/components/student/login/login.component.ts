@@ -18,8 +18,6 @@ export class LoginComponent implements OnInit {
     private flashMessage: FlashMessagesService,
     private validateService: ValidateService
   ) {
-  
-
   }
 
   ngOnInit() {
@@ -36,8 +34,6 @@ export class LoginComponent implements OnInit {
       this.authService.authenticateUser(user).subscribe(data=>{
   
         if(data.success){
-         
-         
           this.flashMessage.show(data.msg, {cssClass: 'alert-success', timeout: 4000});
           this.authService.storeUserData(data.token, data.user);
           this.router.navigate(['dashboard']);
