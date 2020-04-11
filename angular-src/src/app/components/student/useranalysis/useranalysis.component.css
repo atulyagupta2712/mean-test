@@ -83,14 +83,13 @@ header {
 }
 
 .column {
-  width: 23%;
+  width: 23.3%;
   margin: 10px;
 }
 
 .card-cont {
-  padding: 1% !important;
   padding-bottom: 3% !important;
-  margin:0;
+  margin:0 auto;
   background-color: white;
 }
 
@@ -101,27 +100,56 @@ header {
 .img-cont,
 .desc,
 .contact {
-  text-align: center;
-  padding: 3%;
+  padding: 4%;
   background-color: rgb(255, 201, 23);
+  color:black;
+}
+.img-cont, .desc{
+  border: 1px solid white;
 }
 
-.img-cont img {
+.img-cont h5{
+  margin:0;
+}
+
+.content1{
+  flex:1;
+  margin-right:5%;
+}
+
+.content2{
+  flex:2;
+}
+
+.content2 button{
+  border: none;
+  border-radius: 10px;
+  padding: 3% 12%;
+  margin: 10px 0 0;
+  background: white
+}
+
+.head{
+  color:rgb(255, 201, 23);
+}
+
+.desc .content1 img {
   border-radius: 50%;
-  width: 45%;
+  max-width: 100%;
   cursor: pointer;
 }
 
-.contact {
-  padding: 3%;
+.desc{
   color: white;
   background-color: rgb(73, 43, 26);
+  display: flex;
 }
 
-.desc {
-  color: rgb(73, 43, 26);
+/* .desc {
+  color: color;
   font-weight: 400;
-}
+  display:flex;
+} */
 
 .name-design {
   color: rgb(73, 43, 26);

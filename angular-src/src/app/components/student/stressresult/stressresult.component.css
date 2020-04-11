@@ -81,8 +81,7 @@ footer {
 
 
 .result-cont {
-  height: 250% !important;
-  padding: 8% 0% 8% 0%;
+  padding: 10% 0% 10% 0%;
   background: rgb(174, 174, 174);
   background: linear-gradient(
     90deg,
@@ -175,4 +174,5 @@ footer {
   border: none;
   font-size: 17px;
   margin-top: 5%;
+  margin-left: 5%;
 }
