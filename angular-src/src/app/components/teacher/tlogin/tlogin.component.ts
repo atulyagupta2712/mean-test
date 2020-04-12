@@ -36,7 +36,9 @@ export class TloginComponent implements OnInit {
         if(data.success){
           this.flashMessage.show(data.msg, {cssClass: 'alert-success', timeout: 4000});
           this.authService.storeTeacherData(data.token, data.teacher);
-          this.router.navigate(['tdashboard']);
+          console.log("login username",this.username)
+          localStorage.setItem('tusername',JSON.stringify(this.username));
+          this.router.navigate(['tchatroom']);
         }
         else{
           this.flashMessage.show(data.msg, {cssClass: 'alert-danger', timeout: 4000});

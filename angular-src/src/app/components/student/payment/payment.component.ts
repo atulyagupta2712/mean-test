@@ -161,6 +161,7 @@ export class PaymentComponent implements OnInit {
           }
           else {
             this.flashMessage.show("Payment successful", { cssClass: 'alert-success', timeout: 4000 });
+            this.router.navigate(['chatroom'])
           }
         }
       }

@@ -37,10 +37,11 @@ export class LoginComponent implements OnInit {
   
         if(data.success){
          
-         
+          localStorage.setItem('username',JSON.stringify(this.username));
           this.flashMessage.show(data.msg, {cssClass: 'alert-success', timeout: 4000});
           this.authService.storeUserData(data.token, data.user);
-          this.router.navigate(['dashboard']);
+         // this.router.navigate(['dashboard']);
+         this.router.navigate(['dashboard']);
         }
         else{
           this.flashMessage.show(data.msg, {cssClass: 'alert-danger', timeout: 4000});

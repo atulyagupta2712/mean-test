@@ -8,7 +8,9 @@ const algo = require('../models/algo');
 const software = require('../models/software');
 const java = require('../models/java');
 const stress = require('../models/stress');
-const psychologist = require('../models/psychologist')
+const psychologist = require('../models/psychologist');
+const teacher = require('../models/teacher')
+let users;
 
 router.post('/register', (request, response, next)=>{
     
@@ -30,7 +32,45 @@ router.post('/register', (request, response, next)=>{
     // response.send("register");
 
 });
-
+router.get('/allusers', (req,res,next)=>{
+    User.find({}, (error,users)=>{
+        if(error){
+            res.json({'success': false, 'msg': 'Failed to get the questions'});
+        }
+        else{
+            res.json({'success': true, 'msg': users});
+        }
+    })
+    // let user = {
+    //     username: req.body.username,
+    //     email: req.body.email,
+    //     password: req.body.password
+    // };
+    // let count = 0;    
+    // User.find({}).toArray((err, Users) => {
+    //     if (err) {
+    //         console.log(err);
+    //         return res.status(500).send(err);
+    //     }
+    //     for(let i = 0; i < Users.length; i++){
+    //         if(Users[i].username == user.username)
+    //         count++;
+    //     }
+    //     // Add user if not already signed up
+    //     if(count == 0){
+    //         users.insert(user, (err, User) => {
+    //             if(err){
+    //                 res.send(err);
+    //             }
+    //             res.json(User);
+    //         });
+    //     }
+    //     else {
+    //         res.json({ user_already_signed_up: true });
+    //     }
+    // });
+    
+})
 router.post('/authenticate', (request, response, next)=>{
     // response.send("authenticate");
     const username = request.body.username;
@@ -131,7 +171,7 @@ router.get('/stress', (request,response,next)=>{
 })
 
 router.get('/psychologist', (request,response,next)=>{
-    psychologist.find({}, (error,questions)=>{
+    teacher.find({}, (error,questions)=>{
         if(error){
             response.json({'success': false, 'msg': 'Failed to get the questions'});
         }

@@ -30,7 +30,13 @@ import { StudentStressComponent } from './components/student/studentstress/stude
 import { StressComponent } from './components/teacher/tquiz/stress/stress.component';
 import { StressResultComponent } from './components/student/stressresult/stressresult.component';
 import { UserAnalysisComponent } from './components/student/useranalysis/useranalysis.component';
-import { PaymentComponent } from './components/student/payment/payment.component'
+import { PaymentComponent } from './components/student/payment/payment.component';
+import { ChatComponent } from './components/student/chat/chat.component';
+import { UserServiceService } from './services/user-service.service';
+import { WebSocketServiceService } from './services/web-socket-service.service';
+import { ChatroomComponent } from './components/student/chatroom/chatroom.component';
+import { TchatComponent } from './components/teacher/tchat/tchat.component';
+import { TchatroomComponent } from './components/teacher/tchatroom/tchatroom.component';
 
 
 const appRoutes: Routes = [
@@ -53,7 +59,11 @@ const appRoutes: Routes = [
   {path: "stress", component: StressComponent, canActivate: [AuthGuard2]},
   {path: "stressresult", component: StressResultComponent, canActivate:[AuthGuard]},
   {path: "useranalysis", component: UserAnalysisComponent, canActivate:[AuthGuard]},
-  {path: "payment", component: PaymentComponent, canActivate:[AuthGuard]}
+  {path: "payment", component: PaymentComponent, canActivate:[AuthGuard]},
+  {path: "chat", component: ChatComponent},
+  {path: "chatroom", component: ChatroomComponent},
+  {path: "tchatroom", component: TchatroomComponent},
+  {path: "tchat", component: TchatComponent},
 ]
 
 
@@ -84,7 +94,11 @@ const appRoutes: Routes = [
     StressComponent,
     StressResultComponent,
     UserAnalysisComponent,
-    PaymentComponent
+    PaymentComponent,
+    ChatComponent,
+    ChatroomComponent,
+    TchatComponent,
+    TchatroomComponent
     
   ],
   imports: [
@@ -95,7 +109,7 @@ const appRoutes: Routes = [
     FlashMessagesModule,
     ReactiveFormsModule
   ],
-  providers: [ValidateService, AuthService, AuthGuard, AuthGuard2],
+  providers: [ValidateService, AuthService, AuthGuard, AuthGuard2, UserServiceService, WebSocketServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
