@@ -2,13 +2,12 @@
   <table class="table table-hover">
       <thead>
         <tr>
-          <th>Users</th>
+          <th>Psychologists</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let user of Users">
-        
           <td>{{ user.username }}</td>
           <td ><button class="btn btn-success button" routerLink="/chat" [queryParams]="{ name: user.username, email: user.email }" >Chat</button></td>
         </tr>   

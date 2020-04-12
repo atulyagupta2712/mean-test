@@ -21,8 +21,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
    var data= localStorage.getItem('user');
    var object = JSON.parse(data);
-  //  console.log(object.name);
-  document.querySelector('#name').innerHTML = object.name;
+    // console.log(object);
+  document.querySelector('#name').innerHTML = object.username;
   }
   onLogoutClick(){
     this.authService.onLogout();
