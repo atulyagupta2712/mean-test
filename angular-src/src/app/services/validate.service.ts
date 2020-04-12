@@ -23,6 +23,15 @@ export class ValidateService {
     }
   }
 
+  validateDetailedForm(user){
+    if(user.name == undefined || user.number == undefined || user.email == undefined || user.expertise == undefined || user.experience == undefined || user.address == undefined){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
   validateLogin(user){
     // console.log("validateRegister(user)");
     if( user.username == undefined ||user.password == undefined){

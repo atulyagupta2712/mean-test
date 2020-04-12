@@ -24,19 +24,20 @@ export class TdashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    var data= localStorage.getItem('teacher');
+    var data = localStorage.getItem('teacher');
     var object = JSON.parse(data);
-   //  console.log(object.name);
-   document.querySelector('#name').innerHTML = object.name;
+    //  console.log(object.name);
+    document.querySelector('#name').innerHTML = object.name;
   }
-  onLogoutClick(){
+
+  onLogoutClick() {
     this.authService.onLogout();
-    alert('You are logged out');
+    this.flashMessage.show('You have logged out successfully', {cssClass: 'alert-success', timeout: 4000});
     this.router.navigate(['/']);
     return false;
   }
- 
-  onSubmit(){
+
+  onSubmit() {
     const psychologist = {
       name: this.name,
       email: this.email,
@@ -44,31 +45,20 @@ export class TdashboardComponent implements OnInit {
       expertise: this.expertise,
       experience: this.experience,
       address: this.address
-  
-      }
-   
-     
-          this.authService.addpsychologist(psychologist).subscribe(data=>{
-            console.log(data);
-            if(data.success){
-              
-              this.flashMessage.show("Psychologist successfully added!", {cssClass: 'alert-success',timeout: 3000});
-              console.log('hey');
-              alert('Psychologist added!')
-              this.name = "";
-              this.email= "";
-              // this.number = ;
-              this.experience= "";
-              this.expertise= "";
-              this.address= "";  
-            }
-            else{
-              this.flashMessage.show(data.msg, {cssClass: 'alert-danger'});
-            }
-            
-          })
-        
-      
-    this.router.navigate(['./useranalysis']);
+    }
+    if (!this.validateService.validateDetailedForm(psychologist)) {
+      this.flashMessage.show("Please fill in all the fields", { cssClass: 'alert-danger', timeout: 4000 });
+    } else {
+      // Math.floor((Math.random() * 5) + 1);
+      this.authService.addpsychologist(psychologist).subscribe(data => {
+        console.log(data);
+        if (data.success) {
+          this.flashMessage.show("Psychologist successfully added!", { cssClass: 'alert-success', timeout: 3000 });
+        }
+        else {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-danger' });
+        }
+      })
+    }
   }
 }

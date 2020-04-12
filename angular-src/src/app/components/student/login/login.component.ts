@@ -18,8 +18,6 @@ export class LoginComponent implements OnInit {
     private flashMessage: FlashMessagesService,
     private validateService: ValidateService
   ) {
-  
-
   }
 
   ngOnInit() {
