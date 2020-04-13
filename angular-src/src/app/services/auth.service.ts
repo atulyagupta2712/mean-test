@@ -143,7 +143,7 @@ export class AuthService {
   getpsychologist(){
     let header = new Headers();
     header.append('content-type','application/json');
-    return this.http.get('http://localhost:3000/userRoute/psychologist', {headers:header}).map(response=>{
+    return this.http.get('http://localhost:3000/userRoute/psychologistanalyse', {headers:header}).map(response=>{
       return response.json();
     })
   }

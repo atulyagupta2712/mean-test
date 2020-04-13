@@ -83,7 +83,7 @@ export class StudentStressComponent implements OnInit {
     
   onLogoutClick(){
     this.authService.onLogout();
-    alert('You are logged out');
+    this.flashMessage.show('You have logged out successfully', {cssClass: 'alert-success', timeout: 4000});
     this.router.navigate(['/']);
     return false;
   }

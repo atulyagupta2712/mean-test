@@ -180,4 +180,14 @@ router.get('/psychologist', (request,response,next)=>{
         }
     })
 })
+router.get('/psychologistanalyse', (request,response,next)=>{
+    psychologist.find({}, (error,questions)=>{
+        if(error){
+            response.json({'success': false, 'msg': 'Failed to get the questions'});
+        }
+        else{
+            response.json({'success': true, 'msg': questions});
+        }
+    })
+})
 module.exports = router;

@@ -37,23 +37,23 @@
           <div class="content2">
             <h6>Experience : <span class="head">{{p.experience}} </span></h6>
             <h6>Expertise : <span class="head">{{p.expertise}}</span></h6>
-            <h6>Rating : <i class="head fas fa-star"></i><i class="head far fa-star"></i>
+            <h6>Rating : 
               <span *ngIf="p.rating">
                 <!-- 1 star  -->
                 <i
-                  [class]="(p.rating == 0) ? 'far fa-star' : (p.rating > 0 && p.rating < 1) ? 'fas fa-star-half-alt' : 'fas fa-star'"></i>
+                  [class]="(p.rating == 0) ? 'far fa-star' : (p.rating > 0 && p.rating < 1) ? 'head fas fa-star-half-alt' : 'head fas fa-star'"></i>
                 <!-- 2 star  -->
                 <i
-                  [class]="(p.rating > 1 && p.rating < 2) ? 'fas fa-star-half-alt' : (p.rating >= 2) ? 'fas fa-star' : 'far fa-star'"></i>
+                  [class]="(p.rating > 1 && p.rating < 2) ? 'fas fa-star-half-alt' : (p.rating >= 2) ? 'head fas fa-star' : 'head far fa-star'"></i>
                 <!-- 3 star  -->
                 <i
-                  [class]="(p.rating > 2 && p.rating < 3) ? 'fas fa-star-half-alt' : (p.rating >= 3) ? 'fas fa-star' : 'far fa-star'"></i>
+                  [class]="(p.rating > 2 && p.rating < 3) ? 'fas fa-star-half-alt' : (p.rating >= 3) ? 'head fas fa-star' : 'head far fa-star'"></i>
                 <!-- 4 star  -->
                 <i
-                  [class]="(p.rating > 3 && p.rating < 4) ? 'fas fa-star-half-alt' : (p.rating >= 4) ? 'fas fa-star' : 'far fa-star'"></i>
+                  [class]="(p.rating > 3 && p.rating < 4) ? 'fas fa-star-half-alt' : (p.rating >= 4) ? 'head fas fa-star' : 'head far fa-star'"></i>
                 <!-- 5 star  -->
                 <i
-                  [class]="(p.rating > 4 && p.rating < 5) ? 'fas fa-star-half-alt' : (p.rating >= 5) ? 'fas fa-star' : 'far fa-star'"></i>
+                  [class]="(p.rating > 4 && p.rating < 5) ? 'fas fa-star-half-alt' : (p.rating >= 5) ? 'head fas fa-star' : 'head far fa-star'"></i>
               </span>
             </h6>
             <button (click)="onChat()" >Proceed to Chat</button>
@@ -134,7 +134,8 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
+<i class="head fas fa-star"></i><i class="head far fa-star"></i> -->
     <footer>
       <div class="footer-1">
         <p>Copyright © 2019 MAAD. All Rights Reserved.</p>

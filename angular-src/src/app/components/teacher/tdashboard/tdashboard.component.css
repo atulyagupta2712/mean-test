@@ -147,7 +147,7 @@ textarea {
 
 ::placeholder {
   color: white;
-  opacity: 1;
+  opacity:0.5;
 }
 
 :-ms-input-placeholder {
@@ -163,9 +163,9 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* background: rgba(255, 203, 61); */
-  background: wheat;
-  border-top: 2px solid firebrick;
+  background: rgba(255, 203, 61);
+  /* background: wheat;
+  border-top: 2px solid firebrick; */
 }
 
 .footer-1 {
